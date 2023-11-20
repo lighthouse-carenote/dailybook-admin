@@ -1,33 +1,34 @@
-const path = require('path');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const { CleanWebpackPlugin } = require('clean-webpack-plugin');
-const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin');
-const DotEnv = require('dotenv-webpack');
-const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
+const path = require("path");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
+const { CleanWebpackPlugin } = require("clean-webpack-plugin");
+const ForkTsCheckerWebpackPlugin = require("fork-ts-checker-webpack-plugin");
+const DotEnv = require("dotenv-webpack");
+const BundleAnalyzerPlugin =
+  require("webpack-bundle-analyzer").BundleAnalyzerPlugin;
 
 module.exports = {
-    stats: 'errors-only',
-    mode: 'production',
-    entry: './src/index.tsx',
-    output: {
-    filename: '[contenthash].bundle.js',
-    path: path.resolve(__dirname, 'build'),
-    publicPath: '/static/www/carehouse/',
-    },
+  stats: "errors-only",
+  mode: "production",
+  entry: "./src/index.tsx",
+  output: {
+    filename: "[contenthash].bundle.js",
+    path: path.resolve(__dirname, "build"),
+    publicPath: "/static/www/carehouse/",
+  },
 
   // https://webpack.kr/guides/code-splitting/
-    optimization: {
-    runtimeChunk: 'single',
+  optimization: {
+    runtimeChunk: "single",
     splitChunks: {
-        chunks: 'all',
-        },
+      chunks: "all",
     },
+  },
 
   resolve: {
     alias: {
-      '~': path.resolve(__dirname, 'src'),
+      "~": path.resolve(__dirname, "src"),
     },
-    extensions: ['.ts', '.tsx', '.js', '.json'],
+    extensions: [".ts", ".tsx", ".js", ".json"],
   },
 
   module: {
@@ -35,27 +36,27 @@ module.exports = {
       {
         test: /\.(ts|tsx)$/,
         use: [
-          'babel-loader',
+          "babel-loader",
           {
-            loader: 'ts-loader',
+            loader: "ts-loader",
             options: {
               transpileOnly: true,
             },
           },
-          'eslint-loader',
+          "eslint-loader",
         ],
         exclude: /node_modules/,
       },
       {
         test: /\.(png|jpe?g|gif|svg)$/,
-        loader: 'file-loader',
+        loader: "file-loader",
         options: {
-          publicPath: '/static/www/carehouse',
+          publicPath: "/static/www/carehouse",
         },
       },
       {
         test: /\.css$/,
-        use: ['style-loader', 'css-loader'],
+        use: ["style-loader", "css-loader"],
       },
     ],
   },
@@ -63,7 +64,7 @@ module.exports = {
   devtool: false,
 
   devServer: {
-    contentBase: path.resolve(__dirname, 'dist'),
+    contentBase: path.resolve(__dirname, "dist"),
     historyApiFallback: true,
     compress: false,
     port: 3000,
@@ -72,16 +73,16 @@ module.exports = {
   plugins: [
     new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
-      template: 'public/index.html',
-      title: '케어하우스 - 수급자와 요양시설을 연결하는 단 하나의 플랫폼',
+      template: "public/index.html",
+      title: "라이트하우스 어드민",
     }),
     new ForkTsCheckerWebpackPlugin({
       eslint: {
-        files: './src/**/*.{ts,tsx,js,jsx}',
+        files: "./src/**/*.{ts,tsx,js,jsx}",
       },
     }),
     new DotEnv({
-      path: './.env.prod',
+      path: "./.env.prod",
       safe: true,
       allowEmptyValues: true,
       systemvars: true,
@@ -89,8 +90,8 @@ module.exports = {
       defaults: false,
     }),
     new BundleAnalyzerPlugin({
-      analyzerMode: 'static',
-      reportFilename: 'bundleAnalyzer.html',
+      analyzerMode: "static",
+      reportFilename: "bundleAnalyzer.html",
       openAnalyzer: false,
     }),
   ],
