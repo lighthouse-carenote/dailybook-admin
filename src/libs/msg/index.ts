@@ -1,0 +1,222 @@
+import KEY from '../key';
+
+const MSG = {
+  PREPARING: '준비중입니다.',
+
+  CHAT: {
+    NOT_CREATED: '채팅방이 개설되지 않았습니다.',
+    CLOSED: '채팅방이 종료되었습니다.',
+  },
+
+  API: {
+    ERROR: {
+      CHECK_NETWORK: '네트워크가 연결되지 않았습니다.\n랜선 또는 와이파이 연결 상태를\n점검해주세요.',
+      FAIL_TO_COMMUNICATE_WITH_SERVER:
+        '서버와의 통신에 실패하였습니다.\n새로고침(F5)을 시도해주시고\n문제가 지속된다면 관리자에게 문의해주세요.',
+      CONTACT_US: '관리자에게 문의해주세요.',
+      FAIL_TO_PAYMENT: '결제에 실패하였습니다.\n고객센터에 문의해주세요.',
+    },
+  },
+
+  PASSWORD_REGEX: '4-20자의 비밀번호를 입력해주세요',
+  PASSWORD_BLANK: '비밀번호를 입력해주세요',
+  PASSWORD_WRONG: '비밀번호가 틀렸습니다',
+  PASSWORD_REPEAT_WRONG: '비밀번호가 일치하지 않습니다',
+
+  PHONE_REGEX: '잘못된 휴대전화번호 형식입니다',
+  PHONE_BLANK: '휴대전화번호를 입력해주세요',
+  PHONE_DUPLICATE: '이미 사용중인 휴대전화번호입니다',
+
+  AUTH_NUM_BLANK: '인증번호를 입력해주세요',
+  AUTH_NUM_SENT: '인증번호를 발송했습니다. (유효시간 5분)',
+  AUTH_NUM_INVALID: '인증번호가 잘못되었습니다. 다시 입력해주세요.',
+  AUTH_NUM_SUCCESS: '인증에 성공하였습니다.',
+  AUTH_NUM_RESEND_AFTER_ONE_MINUTE: '인증번호 재발송은 1분 후에 가능합니다.',
+  AUTH_NUM_OVER_VERIFY_TIME: '인증시간이 만료되었습니다. 재발송 및 재인증을 진행해주세요.',
+
+  // LOGIN
+  [KEY.LOGIN.ID_ERR_MSG]: '아이디를 입력해 주세요',
+  [KEY.LOGIN.PW_ERR_MSG]: '비밀번호를 입력해 주세요',
+  [KEY.LOGIN.FAIL_MSG]: '가입하지 않은 아이디이거나 잘못된 비밀번호 입니다',
+
+  // GUARDIAN REGISTER ID
+  [KEY.GUARDIAN.REGISTER.ID_BLANK_ERR_MSG]: '아이디는 필수 정보입니다',
+  [KEY.GUARDIAN.REGISTER.ID_REGEX_ERR_MSG]: '5-20자의 영문 소문자, 숫자만 사용가능합니다',
+  [KEY.GUARDIAN.REGISTER.ID_DUPLICATE_ERR_MSG]: '이미 사용중인 아이디 입니다',
+  [KEY.GUARDIAN.REGISTER.ID_AVAILABLE_CONFIRM_MSG]: '사용 가능한 아이디 입니다',
+
+  // GUARDIAN REGISTER PW
+  [KEY.GUARDIAN.REGISTER.PW_BLANK_ERR_MSG]: '비밀번호는 필수 정보입니다',
+  [KEY.GUARDIAN.REGISTER.PW_REGEX_ERR_MSG]: '4-20자의 비밀번호를 입력해주세요',
+
+  // GUARDIAN REGISTER PW REPEAT
+  [KEY.GUARDIAN.REGISTER.PW_REPEAT_BLANK_ERR_MSG]: '비밀번호를 다시 한 번 입력해 주세요',
+  [KEY.GUARDIAN.REGISTER.PW_REPEAT_UNSAME_ERR_MSG]: '비밀번호가 일치하지 않습니다',
+
+  // GUARDIAN REGISTER NAME
+  [KEY.GUARDIAN.REGISTER.NAME_BLANK_ERR_MSG]: '이름은 필수 정보입니다',
+
+  // GUARDIAN REGISTER PHONE
+  [KEY.GUARDIAN.REGISTER.PHONE_BLANK_ERR_MSG]: '휴대전화번호는 필수 정보입니다',
+  [KEY.GUARDIAN.REGISTER.PHONE_REGEX_ERR_MSG]: '형식에 맞지 않는 휴대전화번호입니다',
+  [KEY.GUARDIAN.REGISTER.PHONE_DUPLICATE_ERR_MSG]: '이미 사용중인 휴대전화번호입니다',
+  [KEY.GUARDIAN.REGISTER.PHONE_NOT_REQUESTED_AUTH_ERR_MSG]: '휴대전화번호 인증을 진행해주세요', // 기획에 없던 부분 추가
+
+  // GUARDIAN REGISTER AUTH NUM
+  [KEY.GUARDIAN.REGISTER.AUTH_NUM_SENT_MSG]:
+    '인증번호를 발송했습니다. (유효시간 5분)\n인증번호가 오지 않으면 입력하신 정보가 정확한지 확인하여 주세요.',
+  [KEY.GUARDIAN.REGISTER.AUTH_NUM_INVALID_ERR_MSG]: '인증번호가 잘못되었습니다. 다시 입력해주세요.',
+  [KEY.GUARDIAN.REGISTER.AUTH_NUM_SUCCESS_MSG]: '인증에 성공하였습니다.',
+  [KEY.GUARDIAN.REGISTER.AUTH_NUM_RESEND_AFTER_ONE_MINUTE_MSG]: '인증번호 재발송은 1분 후에 가능합니다.',
+  [KEY.GUARDIAN.REGISTER.AUTH_NUM_OVER_VERIFY_TIME_MSG]: '인증시간이 만료되었습니다. 재발송 및 재인증을 진행해주세요.',
+
+  // GUARDIAN REGISTER BIRTH
+  [KEY.GUARDIAN.REGISTER.YEAR_BLANK_ERR_MSG]: '태어난 년도를 선택하세요',
+  [KEY.GUARDIAN.REGISTER.MONTH_BLANK_ERR_MSG]: '태어난 월를 선택하세요',
+  [KEY.GUARDIAN.REGISTER.DAY_BLANK_ERR_MSG]: '태어난 일을 선택하세요',
+
+  // GUARDIAN REGISTER AGREEMENT
+  [KEY.GUARDIAN.REGISTER.AGREEMENT_ERR_MSG]: '※ 필수항목에 모두 동의해주세요',
+
+  // GUARDIAN REQUEST
+  [KEY.GUARDIAN.REQUEST.ERROR_MSG.AGE]: '나이를 선택해주세요',
+  [KEY.GUARDIAN.REQUEST.ERROR_MSG.DISEASES]: '건강상태를 모두 체크해주세요',
+  [KEY.GUARDIAN.REQUEST.ERROR_MSG.DISEASES_ETC]: '기타를 선택하셨다면 질병명을 입력해주세요',
+  [KEY.GUARDIAN.REQUEST.ERROR_MSG.GENDER]: '성별을 선택해주세요',
+  [KEY.GUARDIAN.REQUEST.ERROR_MSG.GRADE]: '등급을 선택해주세요',
+  [KEY.GUARDIAN.REQUEST.ERROR_MSG.LOCATIONS]: '주소를 선택해주세요',
+  [KEY.GUARDIAN.REQUEST.ERROR_MSG.QUALIFICATION]: '자격을 선택해주세요',
+  [KEY.GUARDIAN.REQUEST.ERROR_MSG.SERVICE_TYPE]: '서비스 유형 선택은 필수사항입니다',
+  [KEY.GUARDIAN.REQUEST.ERROR_MSG.COMMENT]: '최대 3개 항목까지 선택 가능합니다',
+
+  [KEY.GUARDIAN.REQUEST.ERROR_MSG.ENTER_PHONE_BLANK_ERR_MSG]: '휴대전화번호를 입력해주세요',
+  [KEY.GUARDIAN.REQUEST.ERROR_MSG.ENTER_PHONE_REGEX_ERR_MSG]: '휴대전화번호 형식이 올바르지 않습니다',
+  [KEY.GUARDIAN.REGISTER.PHONE_NOT_REQUESTED_AUTH_ERR_MSG]: '휴대전화번호 인증을 진행해주세요', // 기획에 없던 부분 추가
+
+  // REQUEST GUARDIAN LOGIN
+  [KEY.GUARDIAN.REQUEST.ERROR_MSG.LOGIN_ID_BLANK_ERR_MSG]: '아이디를 입력해 주세요',
+  [KEY.GUARDIAN.REQUEST.ERROR_MSG.LOGIN_PW_BLANK_ERR_MSG]: '비밀번호를 입력해 주세요',
+  [KEY.GUARDIAN.REQUEST.ERROR_MSG.LOGIN_FAIL_MSG]: '가입하지 않은 아이디이거나 잘못된 비밀번호 입니다',
+  [KEY.GUARDIAN.REQUEST.ERROR_MSG.LOGIN_UNAVAILABLE_INSTITUTE_USER_ERR_MSG]: '시설 유저는 요청서를 전송할 수 없습니다',
+
+  // REQUEST GUARDIAN REGISTER ID
+  [KEY.GUARDIAN.REQUEST.ERROR_MSG.REGISTER_ID_BLANK_ERR_MSG]: '아이디는 필수 정보입니다',
+  [KEY.GUARDIAN.REQUEST.ERROR_MSG.REGISTER_ID_REGEX_ERR_MSG]: '5-20자의 영문 소문자, 숫자만 사용가능합니다',
+  [KEY.GUARDIAN.REQUEST.ERROR_MSG.REGISTER_ID_DUPLICATE_ERR_MSG]: '이미 사용중인 아이디 입니다',
+  [KEY.GUARDIAN.REQUEST.CONFIRM_MSG.REGISTER_ID_AVAILABLE_CONFIRM_MSG]: '사용 가능한 아이디 입니다',
+
+  // REQUEST GUARDIAN REGISTER PW
+  [KEY.GUARDIAN.REQUEST.ERROR_MSG.REGISTER_PW_BLANK_ERR_MSG]: '비밀번호는 필수 정보입니다',
+  [KEY.GUARDIAN.REQUEST.ERROR_MSG.REGISTER_PW_REGEX_ERR_MSG]: '4-20자의 비밀번호를 입력해주세요',
+
+  // REQUEST GUARDIAN REGISTER PW REPEAT
+  [KEY.GUARDIAN.REQUEST.ERROR_MSG.REGISTER_PW_CONFIRM_BLANK_ERR_MSG]: '비밀번호를 다시 한 번 입력해 주세요',
+  [KEY.GUARDIAN.REQUEST.ERROR_MSG.REGISTER_PW_CONFIRM_UNSAME_ERR_MSG]: '비밀번호가 일치하지 않습니다',
+
+  // REQUEST GUARDIAN REGISTER NAME
+  [KEY.GUARDIAN.REQUEST.ERROR_MSG.REGISTER_NAME_BLANK_ERR_MSG]: '이름은 필수 정보입니다',
+
+  // REQUEST GUARDIAN REGISTER AUTH NUM
+  [KEY.GUARDIAN.REQUEST.ERROR_MSG.REGISTER_AUTH_NUM_NOT_SENT_AUTH_NUM_ERR_MSG]: '인증번호를 먼저 받아주세요.', // 임의 추가
+  [KEY.GUARDIAN.REQUEST.CONFIRM_MSG.REGISTER_AUTH_NUM_SENT_MSG]: '인증번호를 발송했습니다. (유효시간 5분)',
+  [KEY.GUARDIAN.REQUEST.ERROR_MSG.REGISTER_AUTH_NUM_INVALID_ERR_MSG]: '인증번호가 틀렸습니다.',
+  [KEY.GUARDIAN.REQUEST.ERROR_MSG.REGISTER_AUTH_NUM_BLANK_ERR_MSG]: '인증번호를 입력해주세요.', // 임의 추가
+  [KEY.GUARDIAN.REQUEST.CONFIRM_MSG.REGISTER_AUTH_NUM_SUCCESS_MSG]: '인증에 성공하였습니다.',
+
+  // REQUEST GUARDIAN REGISTER BIRTH
+  [KEY.GUARDIAN.REQUEST.ERROR_MSG.REGISTER_YEAR_BLANK_ERR_MSG]: '태어난 년도를 선택하세요',
+  [KEY.GUARDIAN.REQUEST.ERROR_MSG.REGISTER_MONTH_BLANK_ERR_MSG]: '태어난 월를 선택하세요',
+  [KEY.GUARDIAN.REQUEST.ERROR_MSG.REGISTER_DAY_BLANK_ERR_MSG]: '태어난 일을 선택하세요',
+
+  // REQUEST GUARDIAN REGISTER AGREEMENT
+  [KEY.GUARDIAN.REQUEST.ERROR_MSG.REGISTER_AGREEMENT_ERR_MSG]: '※ 필수항목에 모두 동의해주세요',
+
+  // INSTITUTE REGISTER ID
+  [KEY.INSTITUTE.REGISTER.ID_BLANK_ERR_MSG]: '아이디는 필수 정보입니다',
+  [KEY.INSTITUTE.REGISTER.ID_REGEX_ERR_MSG]: '5-20자의 영문 소문자, 숫자만 사용가능합니다',
+  [KEY.INSTITUTE.REGISTER.ID_DUPLICATE_ERR_MSG]: '이미 사용중인 아이디 입니다',
+  [KEY.INSTITUTE.REGISTER.ID_AVAILABLE_CONFIRM_MSG]: '사용 가능한 아이디 입니다',
+
+  // INSTITUTE REGISTER PW
+  [KEY.INSTITUTE.REGISTER.PW_BLANK_ERR_MSG]: '비밀번호는 필수 정보입니다',
+  [KEY.INSTITUTE.REGISTER.PW_REGEX_ERR_MSG]: '4-20자의 비밀번호를 입력해주세요',
+
+  // INSTITUTE REGISTER PW REPEAT
+  [KEY.INSTITUTE.REGISTER.PW_REPEAT_BLANK_ERR_MSG]: '비밀번호를 다시 한 번 입력해 주세요',
+  [KEY.INSTITUTE.REGISTER.PW_REPEAT_UNSAME_ERR_MSG]: '비밀번호가 일치하지 않습니다',
+
+  // INSTITUTE REGISTER NAME
+  [KEY.INSTITUTE.REGISTER.NAME_BLANK_ERR_MSG]: '이름은 필수 정보입니다',
+
+  // INSTITUTE REGISTER PHONE
+  [KEY.INSTITUTE.REGISTER.PHONE_BLANK_ERR_MSG]: '휴대전화번호는 필수 정보입니다',
+  [KEY.INSTITUTE.REGISTER.PHONE_REGEX_ERR_MSG]: '형식에 맞지 않는 휴대전화번호입니다',
+  [KEY.INSTITUTE.REGISTER.PHONE_DUPLICATE_ERR_MSG]: '이미 사용중인 휴대전화번호입니다',
+  [KEY.INSTITUTE.REGISTER.PHONE_NOT_REQUESTED_AUTH_ERR_MSG]: '휴대전화번호 인증을 진행해주세요', // 기획에 없던 부분 추가
+
+  // INSTITUTE REGISTER AUTH NUM
+  [KEY.INSTITUTE.REGISTER.AUTH_NUM_SENT_MSG]:
+    '인증번호를 발송했습니다. (유효시간 5분)\n인증번호가 오지 않으면 입력하신 정보가 정확한지 확인하여 주세요.',
+  [KEY.INSTITUTE.REGISTER.AUTH_NUM_INVALID_ERR_MSG]: '인증번호가 잘못되었습니다. 다시 입력해주세요.',
+  [KEY.INSTITUTE.REGISTER.AUTH_NUM_SUCCESS_MSG]: '인증에 성공하였습니다.',
+  [KEY.INSTITUTE.REGISTER.AUTH_NUM_RESEND_AFTER_ONE_MINUTE_MSG]: '인증번호 재발송은 1분 후에 가능합니다.',
+  [KEY.INSTITUTE.REGISTER.AUTH_NUM_OVER_VERIFY_TIME_MSG]: '인증시간이 만료되었습니다. 재발송 및 재인증을 진행해주세요.',
+
+  // INSTITUTE REGISTER BIRTH
+  [KEY.INSTITUTE.REGISTER.YEAR_BLANK_ERR_MSG]: '태어난 년도를 선택하세요',
+  [KEY.INSTITUTE.REGISTER.MONTH_BLANK_ERR_MSG]: '태어난 월를 선택하세요',
+  [KEY.INSTITUTE.REGISTER.DAY_BLANK_ERR_MSG]: '태어난 일을 선택하세요',
+
+  // INSTITUTE REGISTER AGREEMENT
+  [KEY.INSTITUTE.REGISTER.AGREEMENT_ERR_MSG]: '※ 필수항목에 모두 동의해주세요',
+
+  // INSTITUTE BASIC INFO
+  [KEY.INSTITUTE.REGISTER.BASIC_INFO_INSTITUTE_NAME_BLANK_ERR_MSG]: '정확한 시설명을 입력해주세요.',
+  [KEY.INSTITUTE.REGISTER.BASIC_INFO_INSTITUTE_REPRESENTER_NAME_BLANK_ERR_MSG]: '시설 대표자명을 입력해주세요.',
+  [KEY.INSTITUTE.REGISTER.BASIC_INFO_INSTITUTE_ADDRESS_BLANK_ERR_MSG]: '시설 소재지를 입력해주세요.',
+
+  // FIND_ID NAME
+  [KEY.FIND.ID.NAME_BLANK_ERR_MSG]: '이름은 필수 정보입니다',
+
+  // FIND_ID PHONE
+  [KEY.FIND.ID.PHONE_BLANK_ERR_MSG]: '휴대전화번호는 필수 정보입니다',
+  [KEY.FIND.ID.PHONE_REGEX_ERR_MSG]: '형식에 맞지 않는 휴대전화번호입니다',
+  [KEY.FIND.ID.PHONE_NOT_REQUESTED_AUTH_ERR_MSG]: '휴대전화번호 인증을 진행해주세요', // 기획에 없던 부분 추가
+
+  // FIND_ID AUTH NUM
+  [KEY.FIND.ID.AUTH_NUM_SENT_MSG]:
+    '인증번호를 발송했습니다. (유효시간 5분)\n인증번호가 오지 않으면 입력하신 정보가 정확한지 확인하여 주세요.',
+  [KEY.FIND.ID.AUTH_NUM_INVALID_ERR_MSG]: '인증번호가 잘못되었습니다. 다시 입력해주세요.',
+  [KEY.FIND.ID.AUTH_NUM_SUCCESS_MSG]: '인증에 성공하였습니다.',
+  [KEY.FIND.ID.AUTH_NUM_RESEND_AFTER_ONE_MINUTE_MSG]: '인증번호 재발송은 1분 후에 가능합니다.',
+  [KEY.FIND.ID.AUTH_NUM_OVER_VERIFY_TIME_MSG]: '인증시간이 만료되었습니다. 재발송 및 재인증을 진행해주세요.',
+
+  // FIND_PW ID
+  [KEY.FIND.PW.ID_BLANK_ERR_MSG]: '아이디는 필수 정보입니다',
+
+  // FIND_PW NAME
+  [KEY.FIND.PW.NAME_BLANK_ERR_MSG]: '이름은 필수 정보입니다',
+
+  // FIND_PW PHONE
+  [KEY.FIND.PW.PHONE_BLANK_ERR_MSG]: '휴대전화번호는 필수 정보입니다',
+  [KEY.FIND.PW.PHONE_REGEX_ERR_MSG]: '형식에 맞지 않는 휴대전화번호입니다',
+  [KEY.FIND.PW.PHONE_NOT_REQUESTED_AUTH_ERR_MSG]: '휴대전화번호 인증을 진행해주세요', // 기획에 없던 부분 추가
+
+  // FIND_PW AUTH NUM
+  [KEY.FIND.PW.AUTH_NUM_SENT_MSG]:
+    '인증번호를 발송했습니다. (유효시간 5분)\n인증번호가 오지 않으면 입력하신 정보가 정확한지 확인하여 주세요.',
+  [KEY.FIND.PW.AUTH_NUM_INVALID_ERR_MSG]: '인증번호가 잘못되었습니다. 다시 입력해주세요.',
+  [KEY.FIND.PW.AUTH_NUM_SUCCESS_MSG]: '인증에 성공하였습니다.',
+  [KEY.FIND.PW.AUTH_NUM_RESEND_AFTER_ONE_MINUTE_MSG]: '인증번호 재발송은 1분 후에 가능합니다.',
+  [KEY.FIND.PW.AUTH_NUM_OVER_VERIFY_TIME_MSG]: '인증시간이 만료되었습니다. 재발송 및 재인증을 진행해주세요.',
+
+  // FIND_PW PW
+  [KEY.FIND.PW.PW_BLANK_ERR_MSG]: '비밀번호는 필수 정보입니다',
+  [KEY.FIND.PW.PW_REGEX_ERR_MSG]: '4-20자의 비밀번호를 입력해주세요',
+
+  // FIND_PW PW REPEAT
+  [KEY.FIND.PW.PW_REPEAT_BLANK_ERR_MSG]: '비밀번호를 다시 한 번 입력해 주세요',
+  [KEY.FIND.PW.PW_REPEAT_UNSAME_ERR_MSG]: '비밀번호가 일치하지 않습니다',
+};
+
+export default MSG;
