@@ -1,12 +1,8 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import { Provider } from 'react-redux';
-import { createStore, applyMiddleware } from 'redux';
-import rootReducer, { rootSaga } from './store';
-import createSagaMiddleware from 'redux-saga';
-import { CONSTANTS } from './libs';
-import { createGlobalStyle } from 'styled-components';
-import App from './App';
+import React from "react";
+import ReactDOM from "react-dom";
+import { CONSTANTS } from "./libs";
+import { createGlobalStyle } from "styled-components";
+import App from "./App";
 
 const GlobalStyle = createGlobalStyle`
   html, body, #root {
@@ -118,18 +114,12 @@ const GlobalStyle = createGlobalStyle`
   }
 `;
 
-const sagaMiddleware = createSagaMiddleware();
-
-const store = createStore(rootReducer, applyMiddleware(sagaMiddleware));
-
-sagaMiddleware.run(rootSaga);
-
-const rootElement = document.getElementById('root');
+const rootElement = document.getElementById("root");
 
 ReactDOM.render(
-    <Provider store={store}>
-        <GlobalStyle />
-        <App />
-    </Provider>,
-    rootElement,
+  <React.Fragment>
+    <GlobalStyle />
+    <App />
+  </React.Fragment>,
+  rootElement
 );
