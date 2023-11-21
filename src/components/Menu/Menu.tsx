@@ -6,6 +6,7 @@ import {
   ListItemButton,
   ListItemText,
   Divider,
+  Box,
 } from "@mui/material";
 import MenuList from "./MenuList";
 
@@ -14,7 +15,7 @@ const Menu = () => {
   const navigate = useNavigate();
 
   return (
-    <div>
+    <Box sx={{ height: "100vh", overflow: "auto" }}>
       <List sx={{ width: "100%", maxWidth: 300 }}>
         <ListItem disablePadding>
           <ListItemButton component="a" onClick={() => navigate("/")}>
@@ -85,7 +86,7 @@ const Menu = () => {
         />
         <Divider />
       </List>
-    </div>
+    </Box>
   );
 };
 
