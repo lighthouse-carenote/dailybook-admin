@@ -1,7 +1,12 @@
 import React from "react";
+import Layout from "~/components/Layout";
 
 const Dailybook = () => {
-  return <h1>Hello Dailybook!</h1>;
+  return (
+    <Layout>
+      <div>Dailybook Here!</div>
+    </Layout>
+  );
 };
 
 export default Dailybook;
