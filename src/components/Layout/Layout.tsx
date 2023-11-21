@@ -1,5 +1,6 @@
 import React from "react";
 import Menu from "../Menu";
+import { Box } from "@mui/material";
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -7,10 +8,22 @@ interface LayoutProps {
 
 const Layout = ({ children }: LayoutProps) => {
   return (
-    <div>
+    <Box
+      sx={{
+        display: "flex",
+        flexDirection: "row",
+        width: "100vw",
+      }}
+    >
       <Menu />
-      {children}
-    </div>
+      <Box
+        sx={{
+          width: "calc(100vw - 300px)",
+        }}
+      >
+        {children}
+      </Box>
+    </Box>
   );
 };
 
