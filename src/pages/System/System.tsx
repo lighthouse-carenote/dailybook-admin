@@ -1,7 +1,12 @@
 import React from "react";
+import Layout from "~/components/Layout";
 
 const System = () => {
-  return <h1>Hello System!</h1>;
+  return (
+    <Layout>
+      <div>System Here!</div>
+    </Layout>
+  );
 };
 
 export default System;
