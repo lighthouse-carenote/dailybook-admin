@@ -15,6 +15,12 @@ const App = () => {
           <Route path="/login" element={<LoginPage />} />
           <Route path="/system" element={<SystemPage />} />
           <Route path="/dailybook" element={<DailybookPage />} />
+          <Route path="/dailybook/register" element={<DailybookPage />} />
+          <Route path="/dailybook/staff_register" element={<DailybookPage />} />
+          <Route
+            path="/dailybook/register_manual"
+            element={<DailybookPage />}
+          />
         </Routes>
       </Suspense>
     </BrowserRouter>
