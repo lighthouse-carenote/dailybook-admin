@@ -91,28 +91,28 @@ const Menu = () => {
         />
         <MenuList
           data={[
-            { path: "/", label: "전체 게시글 통계" },
-            { path: "/", label: "공지사항" },
-            { path: "/", label: "알림장" },
-            { path: "/", label: "알림장 조회율" },
+            { path: "/dailybook/statistics/", label: "전체 게시글 통계" },
+            { path: "/dailybook/notice/", label: "공지사항" },
+            { path: "/dailybook/announcement/", label: "알림장" },
+            { path: "/dailybook/announcement-vtr/", label: "알림장 조회율" },
           ]}
           menu={"데이터 관리"}
         />
         <MenuList
           data={[
-            { path: "/", label: "고객의 소리 관리" },
-            { path: "/", label: "사용자 관리" },
-            { path: "/", label: "사용자 스위칭" },
-            { path: "/", label: "시설 관리" },
-            { path: "/", label: "시설 상담" },
-            { path: "/", label: "시설 상담 이력" },
+            { path: "/dailybook/voc/", label: "고객의 소리 관리" },
+            { path: "/dailybook/user/", label: "사용자 관리" },
+            { path: "/dailybook/user_switch/", label: "사용자 스위칭" },
+            { path: "/dailybook/institution/", label: "시설 관리" },
+            { path: "/dailybook/institution_detail/", label: "시설 상담" },
+            { path: "/dailybook/customer_care/", label: "시설 상담 이력" },
           ]}
           menu={"CRM 관리"}
         />
         <MenuList
           data={[
-            { path: "/", label: "홈 배너 관리" },
-            { path: "/", label: "데일리북 소식 관리" },
+            { path: "/dailybook/banner/", label: "홈 배너 관리" },
+            { path: "/dailybook/common_notice/", label: "데일리북 소식 관리" },
           ]}
           menu={"앱 관리"}
         />
@@ -122,4 +122,4 @@ const Menu = () => {
   );
 };
 
-export default Menu;
+export default React.memo(Menu);
