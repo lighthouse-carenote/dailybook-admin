@@ -1,7 +1,7 @@
 import React from "react";
 import { useLocation } from "react-router-dom";
 import Layout from "~/components/Layout";
-import DailybookRegister from "./DailybookRegister/DailybookRegister";
+import DailybookRegister from "./DailybookRegister";
 
 const Dailybook = () => {
   const pathNames = useLocation().pathname.split("/")[2];
