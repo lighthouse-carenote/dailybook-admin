@@ -19,6 +19,7 @@ const Layout = ({ children }: LayoutProps) => {
       <Box
         sx={{
           width: "calc(100vw - 300px)",
+          marginLeft: "16px",
         }}
       >
         {children}
