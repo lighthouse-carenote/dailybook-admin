@@ -1,19 +1,19 @@
 import React from "react";
-import { useLocation } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import Layout from "~/components/Layout";
 import DailybookRegister from "./DailybookRegister";
 
 const Dailybook = () => {
-  const pathNames = useLocation().pathname.split("/")[2];
+  const { menu } = useParams();
   return (
     <Layout>
-      {pathNames === "register" ? (
+      {menu === "register" ? (
         <DailybookRegister />
-      ) : pathNames === "staff_register" ? (
+      ) : menu === "staff_register" ? (
         <div>staff_register</div>
-      ) : (
+      ) : menu === "register_manual" ? (
         <div>register_manual</div>
-      )}
+      ) : null}
     </Layout>
   );
 };
