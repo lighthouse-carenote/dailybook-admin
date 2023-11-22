@@ -1,4 +1,5 @@
 import * as React from "react";
+import { useNavigate } from "react-router-dom";
 import Box from "@mui/material/Box";
 import { styled, ThemeProvider, createTheme } from "@mui/material/styles";
 import List from "@mui/material/List";
@@ -28,7 +29,9 @@ interface MenuListProps {
   menu: string;
 }
 const MenuList = ({ data, menu }: MenuListProps) => {
+  const navigate = useNavigate();
   const [open, setOpen] = React.useState(false);
+
   return (
     <Box sx={{ display: "flex" }}>
       <ThemeProvider
@@ -90,6 +93,7 @@ const MenuList = ({ data, menu }: MenuListProps) => {
                   <ListItemButton
                     key={item.label}
                     sx={{ py: 0, minHeight: 48, color: "rgba(0,0,0)" }}
+                    onClick={() => navigate(item.path)}
                   >
                     <ListItemText
                       primary={item.label}
