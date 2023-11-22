@@ -1,5 +1,6 @@
 import React from "react";
 import { useLocation } from "react-router-dom";
+import DailybookRegister from "~/components/Dailybook/DailybookRegister";
 import Layout from "~/components/Layout";
 
 const Dailybook = () => {
@@ -7,7 +8,7 @@ const Dailybook = () => {
   return (
     <Layout>
       {pathNames === "register" ? (
-        <div>register</div>
+        <DailybookRegister />
       ) : pathNames === "staff_register" ? (
         <div>staff_register</div>
       ) : (
