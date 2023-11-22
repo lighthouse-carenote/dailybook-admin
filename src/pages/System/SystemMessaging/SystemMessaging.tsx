@@ -1,12 +1,15 @@
-import * as React from "react";
-import { SystemMessagingContent } from "~/components/System/SystemMessaging";
-import { Box } from "@mui/material";
+import React from "react";
+import {
+  SystemMessagingContent,
+  SystemMessagingHistory,
+} from "~/components/System/SystemMessaging";
 
 const SystemMessaging = () => {
   return (
-    <Box>
+    <div>
       <SystemMessagingContent />
-    </Box>
+      <SystemMessagingHistory />
+    </div>
   );
 };
 
