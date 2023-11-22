@@ -59,9 +59,6 @@ const MenuList = ({ data, menu }: MenuListProps) => {
                 alignItems="flex-start"
                 onClick={() => (data ? setOpen(!open) : null)}
                 sx={{
-                  px: 3,
-                  pt: 2.5,
-                  pb: 2.5,
                   "& svg": { opacity: data ? 1 : 0 },
                 }}
               >
@@ -89,9 +86,16 @@ const MenuList = ({ data, menu }: MenuListProps) => {
                 data.map((item) => (
                   <ListItemButton
                     key={item.label}
-                    sx={{ py: 0, minHeight: 48, color: "rgba(0,0,0)" }}
+                    sx={{
+                      py: 0,
+                      minHeight: 48,
+                      color: "rgba(0,0,0)",
+                    }}
                   >
                     <ListItemText
+                      sx={{
+                        marginLeft: 1.5,
+                      }}
                       primary={item.label}
                       primaryTypographyProps={{
                         fontSize: 14,
