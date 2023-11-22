@@ -7,7 +7,11 @@ import {
   ListItemText,
   Divider,
   Box,
+  Avatar,
+  IconButton,
+  Typography,
 } from "@mui/material";
+import LogoutIcon from "@mui/icons-material/Logout";
 import MenuList from "./MenuList";
 
 const Menu = () => {
@@ -15,7 +19,32 @@ const Menu = () => {
   const navigate = useNavigate();
 
   return (
-    <Box sx={{ height: "100vh", overflow: "auto" }}>
+    <Box
+      sx={{
+        height: "100vh",
+        overflow: "auto",
+        borderRight: 1,
+        borderColor: "rgba(0, 0, 0, 0.12)",
+      }}
+    >
+      <Box>
+        <Box
+          sx={{
+            display: "flex",
+            flexDirection: "row",
+            alignItems: "center",
+            gap: 2,
+          }}
+        >
+          <Avatar sx={{ m: 1, bgcolor: "secondary.main" }}></Avatar>
+          <Typography variant="subtitle1" gutterBottom mb="0">
+            Welcome, Dev Admin
+          </Typography>
+          <IconButton sx={{ marginRight: 1 }} aria-label="logout">
+            <LogoutIcon />
+          </IconButton>
+        </Box>
+      </Box>
       <List sx={{ width: "100%", maxWidth: 300 }}>
         <ListItem disablePadding>
           <ListItemButton component="a" onClick={() => navigate("/")}>

@@ -62,9 +62,6 @@ const MenuList = ({ data, menu }: MenuListProps) => {
                 alignItems="flex-start"
                 onClick={() => (data ? setOpen(!open) : null)}
                 sx={{
-                  px: 3,
-                  pt: 2.5,
-                  pb: 2.5,
                   "& svg": { opacity: data ? 1 : 0 },
                 }}
               >
@@ -96,6 +93,9 @@ const MenuList = ({ data, menu }: MenuListProps) => {
                     onClick={() => navigate(item.path)}
                   >
                     <ListItemText
+                      sx={{
+                        marginLeft: 1.5,
+                      }}
                       primary={item.label}
                       primaryTypographyProps={{
                         fontSize: 14,
