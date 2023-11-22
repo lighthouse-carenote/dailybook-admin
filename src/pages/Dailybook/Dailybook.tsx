@@ -1,7 +1,9 @@
 import React from "react";
 import { useParams } from "react-router-dom";
 import Layout from "~/components/Layout";
-import DailybookRegister from "./DailybookRegister";
+import { DailybookRegister } from "./DailybookRegister";
+import { DailybookStaffRegister } from "./DailybookStaffRegister";
+import { DailybookRegisterManual } from "./DailybookRegisterManual";
 
 const Dailybook = () => {
   const { menu } = useParams();
@@ -10,9 +12,9 @@ const Dailybook = () => {
       {menu === "register" ? (
         <DailybookRegister />
       ) : menu === "staff_register" ? (
-        <div>staff_register</div>
+        <DailybookStaffRegister />
       ) : menu === "register_manual" ? (
-        <div>register_manual</div>
+        <DailybookRegisterManual />
       ) : null}
     </Layout>
   );

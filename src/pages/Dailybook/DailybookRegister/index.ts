@@ -1,1 +1,1 @@
-export { default } from "./DailybookRegister";
+export { default as DailybookRegister } from "./DailybookRegister";

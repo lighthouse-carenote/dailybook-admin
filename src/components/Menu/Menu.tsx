@@ -83,9 +83,9 @@ const Menu = () => {
         </ListItem>
         <MenuList
           data={[
-            { path: "/", label: "시설장 요청 관리" },
-            { path: "/", label: "시설직원 요청 관리" },
-            { path: "/", label: "보호자 수기 가입" },
+            { path: "/dailybook/register/", label: "시설장 요청 관리" },
+            { path: "/dailybook/staff_register/", label: "시설직원 요청 관리" },
+            { path: "/dailybook/register_manual/", label: "보호자 수기 가입" },
           ]}
           menu={"가입 승인 관리"}
         />
