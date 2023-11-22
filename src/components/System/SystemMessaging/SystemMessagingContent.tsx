@@ -53,9 +53,13 @@ const SystemMessagingContent = () => {
                   {item.image}
                 </Typography>
                 <Stack spacing={1}>
-                  <InputLabel htmlFor="user-number">수신자 번호</InputLabel>
+                  <InputLabel htmlFor="user-number" sx={{ color: "#000000" }}>
+                    <b>수신자 번호</b>
+                  </InputLabel>
                   <TextField id="outlined-basic" variant="outlined" />
-                  <InputLabel htmlFor="content">내용</InputLabel>
+                  <InputLabel htmlFor="content" sx={{ color: "#000000" }}>
+                    <b>내용</b>
+                  </InputLabel>
                   <TextField
                     id="content"
                     multiline
