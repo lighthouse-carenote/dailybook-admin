@@ -1,5 +1,5 @@
 import * as React from "react";
-import { useNavigate } from "react-router-dom"; // 추가된 코드입니다.
+import { useNavigate } from "react-router-dom";
 import Box from "@mui/material/Box";
 import { styled, ThemeProvider, createTheme } from "@mui/material/styles";
 import List from "@mui/material/List";

@@ -59,16 +59,19 @@ const Menu = () => {
         </ListItem>
         <MenuList
           data={[
-            { path: "/", label: "SMS/LMS 발송 (운영자용)" },
-            { path: "/", label: "Push Noti 발송 (개발자용)" },
+            { path: "/system/messaging/", label: "SMS/LMS 발송 (운영자용)" },
+            {
+              path: "/system/push_message/",
+              label: "Push Noti 발송 (개발자용)",
+            },
           ]}
           menu={"공통기능"}
         />
         <MenuList
           data={[
-            { path: "/", label: "공통 코드" },
-            { path: "/", label: "HTTP 요청 응답 이력" },
-            { path: "/", label: "스케줄러 관리" },
+            { path: "/system/code/", label: "공통 코드" },
+            { path: "/system/log/", label: "HTTP 요청 응답 이력" },
+            { path: "/system/scheduler/", label: "스케줄러 관리" },
           ]}
           menu={"시스템 데이터"}
         />
