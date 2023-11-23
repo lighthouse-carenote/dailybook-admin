@@ -1,7 +1,13 @@
+import { Box } from "@mui/material";
 import React from "react";
+import { DailybookRegisterContents } from "~/components/Dailybook/DailybookRegister";
 
 const DailybookRegister = () => {
-  return <>데일리북 레지스터</>;
+  return (
+    <Box>
+      <DailybookRegisterContents />
+    </Box>
+  );
 };
 
 export default DailybookRegister;
