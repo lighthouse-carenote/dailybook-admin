@@ -21,7 +21,6 @@ const Menu = () => {
   return (
     <Box
       sx={{
-        height: "100vh",
         overflow: "auto",
         borderRight: 1,
         borderColor: "rgba(0, 0, 0, 0.12)",
