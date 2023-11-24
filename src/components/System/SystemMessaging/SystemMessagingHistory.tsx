@@ -29,10 +29,6 @@ const SystemMessagingHistory = () => {
   const [page, setPage] = useState(0);
   const [rowsPerPage, setRowsPerPage] = useState(5);
 
-  const handleChangePage = (newPage) => {
-    setPage(newPage);
-  };
-
   const handleChangeRowsPerPage = (e) => {
     setRowsPerPage(parseInt(e.target.value, 10));
     setPage(0);
@@ -126,7 +122,7 @@ const SystemMessagingHistory = () => {
             count={listItems.length}
             rowsPerPage={rowsPerPage}
             page={page}
-            onPageChange={handleChangePage}
+            onPageChange={(_, newPage) => setPage(newPage)}
             onRowsPerPageChange={handleChangeRowsPerPage}
           />
           <Button
