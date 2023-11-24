@@ -12,20 +12,25 @@ import {
 } from "@mui/material";
 import React from "react";
 
-const RELATION = [
-  "배우자",
-  "아들",
-  "딸",
-  "사위",
-  "며느리",
-  "손자",
-  "손녀",
-  "아버지",
-  "어머니",
-  "할머니",
-  "할아버지",
-  "기타",
-];
+const SELECT_VALUE = {
+  RELATION: [
+    "배우자",
+    "아들",
+    "딸",
+    "사위",
+    "며느리",
+    "손자",
+    "손녀",
+    "아버지",
+    "어머니",
+    "할머니",
+    "할아버지",
+    "기타",
+  ],
+  AGREEMENT: ["동의", "미동의"],
+  CENTERNAME: ["요양시설1", "요양시설2", "요양시설3"],
+  GENDER: ["여", "남"],
+};
 
 const DailybookRegisterManual = () => {
   return (
@@ -88,9 +93,11 @@ const DailybookRegisterManual = () => {
                       label="대상 요양 시설"
                       // onChange={handleChange}
                     >
-                      <MenuItem value={"요양시설1"}>요양시설 1</MenuItem>
-                      <MenuItem value={"요양시설2"}>요양시설 2</MenuItem>
-                      <MenuItem value={"요양시설3"}>요양시설 3</MenuItem>
+                      {SELECT_VALUE.CENTERNAME.map((item, idx) => (
+                        <MenuItem key={idx} value={item}>
+                          {item}
+                        </MenuItem>
+                      ))}
                     </Select>
                   </FormControl>
                 </Box>
@@ -127,8 +134,11 @@ const DailybookRegisterManual = () => {
                       label="수급자 성별"
                       // onChange={handleChange}
                     >
-                      <MenuItem value={"남"}>남</MenuItem>
-                      <MenuItem value={"여"}>여</MenuItem>
+                      {SELECT_VALUE.GENDER.map((item, idx) => (
+                        <MenuItem key={idx} value={item}>
+                          {item}
+                        </MenuItem>
+                      ))}
                     </Select>
                   </FormControl>
                 </Box>
@@ -202,7 +212,7 @@ const DailybookRegisterManual = () => {
                       label="보호자의 수급자와의 관계"
                       // onChange={handleChange}
                     >
-                      {RELATION.map((item, idx) => (
+                      {SELECT_VALUE.RELATION.map((item, idx) => (
                         <MenuItem key={idx} value={item}>
                           {item}
                         </MenuItem>
@@ -230,7 +240,7 @@ const DailybookRegisterManual = () => {
                       label="보호자의 정보 수신 동의"
                       // onChange={handleChange}
                     >
-                      {["동의", "미동의"].map((item, idx) => (
+                      {SELECT_VALUE.AGREEMENT.map((item, idx) => (
                         <MenuItem key={idx} value={item}>
                           {item}
                         </MenuItem>
