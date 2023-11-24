@@ -26,7 +26,6 @@ interface Column {
   label: string;
   minWidth?: number;
   align?: "right" | "center" | "left";
-  format?: (value: number) => string;
 }
 
 const columns: readonly Column[] = [
