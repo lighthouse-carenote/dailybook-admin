@@ -121,8 +121,11 @@ const DailybookRegisterWaitTable = () => {
           시설장 요청 리스트 - 대기중
         </Typography>
 
-        <TableContainer component={Paper}>
-          <Table sx={{ minWidth: 650 }} aria-label="simple table">
+        <TableContainer component={Paper} sx={{ maxHeight: 300 }}>
+          <Table
+            sx={{ minWidth: 1600, overflow: "auto" }}
+            aria-label="simple table"
+          >
             <TableHead>
               <TableRow>
                 <TableCell align="center">ID</TableCell>
