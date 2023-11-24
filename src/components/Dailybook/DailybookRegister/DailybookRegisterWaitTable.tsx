@@ -12,7 +12,7 @@ import {
 import React from "react";
 
 function createData(
-  id: string,
+  id: number,
   date: string,
   approve: boolean,
   reject: boolean,
@@ -39,73 +39,21 @@ function createData(
   };
 }
 
-const rows = [
+const rows = Array.from({ length: 22 }, (_, idx) =>
   createData(
-    "123",
-    "2023-01-01",
+    idx + 1,
+    `2023-11-11 16:14:40`,
     false,
     true,
     "아무개",
-    "123",
+    `123${idx + 1}`,
     "복지 시설",
     "제주 아무개 장애인 시설",
     "경기도 성남시 분당구 황새울로 360번길 21, 8층",
     "fileurl",
     "fileurl"
-  ),
-  createData(
-    "345",
-    "2023-01-01",
-    false,
-    true,
-    "아무개",
-    "123",
-    "복지 시설",
-    "제주 아무개 장애인 시설",
-    "경기도 성남시 분당구 황새울로 360번길 21, 8층",
-    "fileurl",
-    "fileurl"
-  ),
-  createData(
-    "346",
-    "2023-01-01",
-    false,
-    true,
-    "아무개",
-    "123",
-    "복지 시설",
-    "제주 아무개 장애인 시설",
-    "경기도 성남시 분당구 황새울로 360번길 21, 8층",
-    "fileurl",
-    "fileurl"
-  ),
-  createData(
-    "347",
-    "2023-01-01",
-    false,
-    true,
-    "아무개",
-    "123",
-    "복지 시설",
-    "제주 아무개 장애인 시설",
-    "경기도 성남시 분당구 황새울로 360번길 21, 8층",
-    "fileurl",
-    "fileurl"
-  ),
-  createData(
-    "556",
-    "2023-01-01",
-    false,
-    true,
-    "아무개",
-    "123",
-    "복지 시설",
-    "제주 아무개 장애인 시설",
-    "경기도 성남시 분당구 황새울로 360번길 21, 8층",
-    "fileurl",
-    "fileurl"
-  ),
-];
+  )
+);
 
 const DailybookRegisterWaitTable = () => {
   return (
@@ -128,17 +76,23 @@ const DailybookRegisterWaitTable = () => {
           >
             <TableHead>
               <TableRow>
-                <TableCell align="center">ID</TableCell>
-                <TableCell align="center">요청 일시</TableCell>
-                <TableCell align="center">승인</TableCell>
-                <TableCell align="center">거절</TableCell>
-                <TableCell align="center">사용자 이름</TableCell>
-                <TableCell align="center">시설 번호</TableCell>
-                <TableCell align="center">시설 유형</TableCell>
-                <TableCell align="center">시설 이름</TableCell>
-                <TableCell align="center">시설 주소</TableCell>
-                <TableCell align="center">첨부 파일</TableCell>
-                <TableCell align="center">첨부 보기</TableCell>
+                {[
+                  "ID",
+                  "요청 일시",
+                  "승인",
+                  "거절",
+                  "사용자 이름",
+                  "시설 번호",
+                  "시설 유형",
+                  "시설 이름",
+                  "시설 주소",
+                  "첨부 파일",
+                  "첨부 보기",
+                ].map((item) => (
+                  <TableCell key={item} align="center">
+                    {item}
+                  </TableCell>
+                ))}
               </TableRow>
             </TableHead>
             <TableBody>
@@ -147,19 +101,23 @@ const DailybookRegisterWaitTable = () => {
                   key={row.name}
                   sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
                 >
-                  <TableCell align="center" component="th" scope="row">
-                    {row.id}
-                  </TableCell>
-                  <TableCell align="center">{row.date}</TableCell>
-                  <TableCell align="center">{row.approve}</TableCell>
-                  <TableCell align="center">{row.reject}</TableCell>
-                  <TableCell align="center">{row.userName}</TableCell>
-                  <TableCell align="center">{row.serial}</TableCell>
-                  <TableCell align="center">{row.kind}</TableCell>
-                  <TableCell align="center">{row.name}</TableCell>
-                  <TableCell align="center">{row.address}</TableCell>
-                  <TableCell align="center">{row.file}</TableCell>
-                  <TableCell align="center">{row.viewFile}</TableCell>
+                  {[
+                    row.id,
+                    row.date,
+                    row.approve,
+                    row.reject,
+                    row.userName,
+                    row.serial,
+                    row.kind,
+                    row.name,
+                    row.address,
+                    row.file,
+                    row.viewFile,
+                  ].map((item, idx) => (
+                    <TableCell key={idx} align="center">
+                      {item}
+                    </TableCell>
+                  ))}
                 </TableRow>
               ))}
             </TableBody>
