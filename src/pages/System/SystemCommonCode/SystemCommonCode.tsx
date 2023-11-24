@@ -1,6 +1,6 @@
 import React from "react";
 import { Stack, Paper, Typography } from "@mui/material";
-import { SystemCommonCodeContent } from "~/components/System/SystemCommonCodeContent";
+import { SystemCommonCodeContent } from "~/components/System/SystemCommonCode";
 
 const SystemCommonCode = () => {
   return (
