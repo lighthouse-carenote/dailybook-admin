@@ -62,7 +62,7 @@ const columns: readonly Column[] = [
     id: "employeeName",
     label: "시설직원 명",
     minWidth: 100,
-    align: "left",
+    align: "center",
   },
   {
     id: "employeePhone",

@@ -183,7 +183,7 @@ const DailybookRegisterAllTable = () => {
           시설장 요청 리스트 - 전체
         </Typography>
         <Paper sx={{ width: "100%", overflow: "hidden" }}>
-          <TableContainer sx={{ maxHeight: 440 }}>
+          <TableContainer sx={{ minHeight: 651 }}>
             <Table stickyHeader aria-label="sticky table">
               <TableHead>
                 <TableRow>
