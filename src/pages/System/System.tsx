@@ -4,6 +4,7 @@ import { useParams } from "react-router-dom";
 import SystemMessaging from "./SystemMessaging";
 import SystemPushMessage from "./SystemPushMessage";
 import SystemCommonCode from "./SystemCommonCode";
+import SystemLog from "./SystemLog";
 
 const System = () => {
   const { menu } = useParams();
@@ -16,6 +17,8 @@ const System = () => {
         <SystemPushMessage />
       ) : menu === "code" ? (
         <SystemCommonCode />
+      ) : menu === "log" ? (
+        <SystemLog />
       ) : (
         <></>
       )}
