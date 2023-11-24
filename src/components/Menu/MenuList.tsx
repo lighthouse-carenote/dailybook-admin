@@ -71,7 +71,6 @@ const MenuList = ({ data, menu }: MenuListProps) => {
                     fontSize: 15,
                     fontWeight: "bold",
                     lineHeight: "20px",
-                    mb: "2px",
                   }}
                   sx={{ my: 0 }}
                 />
@@ -89,13 +88,14 @@ const MenuList = ({ data, menu }: MenuListProps) => {
                 data.map((item) => (
                   <ListItemButton
                     key={item.label}
-                    sx={{ py: 0, minHeight: 48, color: "rgba(0,0,0)" }}
+                    sx={{
+                      minHeight: 48,
+                      color: "rgba(0,0,0)",
+                    }}
                     onClick={() => navigate(item.path)}
                   >
                     <ListItemText
-                      sx={{
-                        marginLeft: 1.5,
-                      }}
+                      sx={{ paddingLeft: 2 }}
                       primary={item.label}
                       primaryTypographyProps={{
                         fontSize: 14,

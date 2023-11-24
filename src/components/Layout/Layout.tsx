@@ -18,7 +18,9 @@ const Layout = ({ children }: LayoutProps) => {
       <Menu />
       <Box
         sx={{
+          height: "calc(100vh - 48px)",
           width: "calc(100% - 348px)",
+          overflow: "auto",
           padding: "24px",
         }}
       >
